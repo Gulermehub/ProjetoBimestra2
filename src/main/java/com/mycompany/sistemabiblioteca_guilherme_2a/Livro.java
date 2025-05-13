@@ -3,7 +3,6 @@ package com.mycompany.sistemabiblioteca_guilherme_2a;
 
 public class Livro {
     //atributos
-    private static int proximoIsbn = 1;
     private int isbn;
     private String titulo;
     private String autor;
@@ -12,11 +11,11 @@ public class Livro {
     private boolean disponivel =  true; //até acabarem os livros isso é verdade, o boolean é o falso ou verdadeiro
     
     //construtor
-    public Livro(String titulo, String autor, int ano){
+    public Livro(String titulo, String autor, int ano, int isbn){
     this.titulo = titulo;
     this.autor = autor;
     this.ano = ano;
-    this.isbn = proximoIsbn++;
+    this.isbn = isbn;
     }
     
     

@@ -4,26 +4,26 @@ package com.mycompany.sistemabiblioteca_guilherme_2a;
 public class Administrador {
     
     // atributos do ADM
-    private int id;
-    private String nome;
-    private String email;
+    private int idAdm;
+    private String nomeAdm;
+    private String emailAdm;
     private String cargo;
     // construtor do ADM
-    public Administrador(int id, String nome, String email, String cargo){
-        this.id = id;
-        this.nome = nome;
-        this.email = email;
+    public Administrador(int idAdm, String nomeAdm, String emailAdm, String cargo){
+        this.idAdm = idAdm;
+        this.nomeAdm = nomeAdm;
+        this.emailAdm = emailAdm;
         this.cargo = cargo;}
     // getters para cada atributo 
     public int getId(){
-        return id;
+        return idAdm;
        
     }
     public String getNome(){
-        return nome;
+        return nomeAdm;
     }
     public String getEmail(){
-        return email;
+        return emailAdm;
     }
     public String getCargo(){
         return cargo;
@@ -31,13 +31,13 @@ public class Administrador {
     //setters para cada atributo
     
     public void setId(int id){
-        this.id = id;
+        this.idAdm = id;
     }
      public void setNome(String nome){
-        this.nome = nome;
+        this.nomeAdm = nome;
     }
       public void setEmail(String email){
-        this.email = email;
+        this.emailAdm = email;
     }
       public void setCargo(String cargo){
         this.cargo = cargo;

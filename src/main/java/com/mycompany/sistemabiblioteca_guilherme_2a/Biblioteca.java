@@ -16,10 +16,9 @@ public class Biblioteca {
                    System.out.println("ISBN já registrado.");
                    return; //se for igual ele vai so retornar nada
     }
-   
+        }
     livros.add(novoLivro); // se não encontrou, adiciona o novo livro
     System.out.println("Livro cadastrado com sucesso");
-        }
     }
     //metodo para cadastrar um usuario
     public void cadastrarUsuario (Usuario novoUsuario) {
@@ -49,34 +48,40 @@ public class Biblioteca {
     public void listarLivros(){
         if (livros.isEmpty()){ // se a lista estiver vazia
             System.out.println("Não há livros cadastrados");
-        }
-        else {
+        }else {
             for (Livro L : livros){ // para cada lviro na lista
-                System.out.println(L); // exiba um livro
+                System.out.println(" Livro: " +L.getTitulo() +
+                                   " Autor; " +L.getAutor()+
+                                   " Ano: "+ L.getAno()+
+                                   " ISBN: "+ L.getIsbn()); // exiba um livro
             }
         
         }
     }
-   //USUARIOS 
+   //USUARIOS
     public void listarUsuarios(){
         if (usuarios.isEmpty()){ // se a lista estiver vazia
             System.out.println("Não há usuarios cadastrados");
-        }
-        else {
+        }else {
             for (Usuario U : usuarios){ // para cada usuario na lista
-                System.out.println(U); // exiba um usuario
+                System.out.println(" Usuario: " +U.getNome() +
+                                   " Email; " +U.getEmail()+
+                                   " ID: "+ U.getId()); // exiba um livro
             }
         
         }
     }
-    //ADMINISTRADORES 
+    
+    //ADMINISTRADORES
     public void listarAdministradores(){
         if (administradores.isEmpty()){ // se a lista estiver vazia
             System.out.println("Não há administradores cadastrados");
-        }
-        else {
-            for (Administrador a : administradores){ // para cada ADM na lista
-                System.out.println(a); // exiba um ADM
+        }else {
+            for (Administrador A : administradores){ // para cada usuario na lista
+                System.out.println(" Administrador: " +A.getNome() +
+                                   " Email; " +A.getEmail()+
+                                   " ID: "+ A.getId()+
+                                   " Cargo: "+A.getCargo()); // exiba um livro
             }
         
         }
@@ -101,8 +106,8 @@ public class Biblioteca {
         }
         
         //Agora verificaremos se o livro já foi emprestado
-        if (livro.isDisponivel()){ //usamos o metodo getter do disponivel que fizemos no Livro
-            System.out.println("Livro já foi emprestado");
+        if (livro.isDisponivel() == false){ //se não estiver disponivel 
+            System.out.println("Livro ainda não foi emprestado");
             return;
         }
        
@@ -121,9 +126,11 @@ public class Biblioteca {
         }
        //Finalmente, se passou por esses dois requisitos o livro pode ser emprestado
        livro.setDisponivel(false); // livro não está mais disponivel
-       System.out.println("Livro" + livro.getTitulo() + " emprestado para " + usuario.getNome() );
+       System.out.println("Livro " + livro.getTitulo() + " emprestado para " + usuario.getNome() );
        
     }
+
+   
 
 
 }
